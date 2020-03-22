@@ -1,0 +1,7 @@
+{{ DOMAIN }} {
+  log /tmp/caddy.log
+  proxy /webs 127.0.0.1:{{ PORT }} {
+    websocket
+    header_upstream -Origin
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "log": {
+    "loglevel": "warning",
+    "access": ""
+  },
+  "inbounds": [{
+    "port": {{ PROXY_PORT }},
+    "protocol": "vmess",
+    "settings": {
+      "clients": [{
+        "id": {{ UUID }},
+        "alterId": 64
+      }]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "/webs"
+      }
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}

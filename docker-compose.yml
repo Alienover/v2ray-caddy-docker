@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  v2ray:
+    restart: always
+    image: v2ray/official
+    container_name: v2ray
+    network_mode: "host"
+    command: v2ray -config=/etc/v2ray/config.json
+    volumes:
+      - /etc/v2ray/config.json:/etc/v2ray/config.json
+    expose:
+      - 1597
+
+  caddy:
+    restart: always
+    image: abiosoft/caddy:no-stats
+    container_name: caddy
+    network_mode: "host"
+    working_dir: /etc
+    depends_on:
+      - v2ray
+    volumes:
+      - /etc/v2ray/index.html:/etc/index.html
+      - /etc/v2ray/Caddyfile:/etc/Caddyfile
+    ports:
+      - 443:443
+      - 80:80
