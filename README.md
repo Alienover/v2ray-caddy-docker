@@ -8,6 +8,7 @@ This setting is based on [ws-tls-web] which using the [caddy] as the web server 
 |DOMAIN|Website domain for TLS certificate authority|
 |PROXY_PORT|The exposed port to receive websocket request|
 |UUID|The universally unique identifier for v2ray server. Get from `https://www.uuidgenerator.net/` or use command `uuidgen`|
+
 All you need to do is to modify the variables above to your specified info.
 
 ### Related Command
