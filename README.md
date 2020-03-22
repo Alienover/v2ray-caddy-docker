@@ -26,8 +26,11 @@ $ docker-compose logs -f
 ```
 
 Referrences:
+
 [Caddy Server][caddy]
+
 [Docker Compose][docker-compose]
+
 [Websocket-TLS-Web][ws-tls-web]
 
 [ws-tls-web]: https://toutyrater.github.io/advanced/wss_and_web.html
