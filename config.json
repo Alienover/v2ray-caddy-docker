@@ -4,11 +4,11 @@
     "access": ""
   },
   "inbounds": [{
-    "port": {{ PROXY_PORT }},
+    "port": "{{ PROXY_PORT: number }}",
     "protocol": "vmess",
     "settings": {
       "clients": [{
-        "id": {{ UUID }},
+        "id": "{{ UUID: string }}",
         "alterId": 64
       }]
     },
