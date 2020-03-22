@@ -15,7 +15,7 @@
     "streamSettings": {
       "network": "ws",
       "wsSettings": {
-        "path": "/webs"
+        "path": "{{ WS_PATCH }}"
       }
     }
   }],

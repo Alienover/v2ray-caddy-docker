@@ -8,9 +8,9 @@ services:
     network_mode: "host"
     command: v2ray -config=/etc/v2ray/config.json
     volumes:
-      - /etc/v2ray/config.json:/etc/v2ray/config.json
+      - ./config.json:/etc/v2ray/config.json
     expose:
-      - 1597
+      - {{ PROXY_PORT: number }}
 
   caddy:
     restart: always
@@ -21,8 +21,8 @@ services:
     depends_on:
       - v2ray
     volumes:
-      - /etc/v2ray/index.html:/etc/index.html
-      - /etc/v2ray/Caddyfile:/etc/Caddyfile
+      - ./index.html:/etc/index.html
+      - ./Caddyfile:/etc/Caddyfile
     ports:
       - 443:443
       - 80:80
