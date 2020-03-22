@@ -3,11 +3,11 @@
 This setting is based on [ws-tls-web] which using the [caddy] as the web server and all the server are running in docker.
 
 ### Variables
-|Variable|Description|
-|---|---|
-|DOMAIN|Website domain for TLS certificate authority|
-|PROXY_PORT|The exposed port to receive websocket request|
-|UUID|The universally unique identifier for v2ray server. Get from `https://www.uuidgenerator.net/` or use command `uuidgen`|
+|Variable|Type|Description|
+|---|---|---|
+|DOMAIN|**String**|Website domain for TLS certificate authority|
+|PROXY_PORT|**Number**|The exposed port to receive websocket request|
+|UUID|**String**|The universally unique identifier for v2ray server. Get from `https://www.uuidgenerator.net/` or use command `uuidgen`|
 
 All you need to do is to modify the variables above to your specified info.
 
@@ -26,7 +26,7 @@ $ docker-compose stop
 $ docker-compose logs -f
 ```
 
-### Referrences:
+Referrences:
 
 [Caddy Server][caddy]
 
@@ -34,6 +34,9 @@ $ docker-compose logs -f
 
 [Websocket-TLS-Web][ws-tls-web]
 
+[UUID Generator][uuid-generator]
+
 [ws-tls-web]: https://toutyrater.github.io/advanced/wss_and_web.html
 [caddy]: https://caddyserver.com/
 [docker-compose]: https://docs.docker.com/compose/reference/overview/
+[uuid-generator]: https://www.uuidgenerator.net/
