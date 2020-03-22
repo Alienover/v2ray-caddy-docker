@@ -25,7 +25,7 @@ $ docker-compose stop
 $ docker-compose logs -f
 ```
 
-Referrences:
+### Referrences:
 
 [Caddy Server][caddy]
 
