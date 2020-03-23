@@ -14,7 +14,8 @@ Leave a star if you like it or issue me if there're questions.
 
 All you need to do is to modify the variables above to your specified info in the following files
 * *Caddyfile* Replace **DOMAIN**, **WS_PATH** and **PROXY_PORT**
-* *config.json* Replace **PROXY_PORT**, **UUID** and **WS_PATCH**
+* *server_config.json* Replace **PROXY_PORT**, **UUID** and **WS_PATCH**
+* *client_config.json* Replace **DOMAIN**, **PROXY_PORT**, **UUID** and **WS_PATCH**
 * *docker-compose.yml* Replace **PROXY_PORT**
 
 ### Related Command

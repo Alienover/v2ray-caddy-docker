@@ -1,0 +1,50 @@
+{
+  "log": {
+    "loglevel": "warning",
+    "access": ""
+  },
+  "inbounds": [
+    {
+      "port": 1080,
+      "protocol": "socks",
+      "tag": "ws-tls-in",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "tag": "ws-tls-out",
+      "settings": {
+        "vnext": [
+          {
+            "address": "{{ DOMAIN: string }}",
+            "port": "{{ PROXY_DOMAIN: number }}",
+            "users": [
+              {
+                "id": "{{ UUID: string }}",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "wsSettings": {
+          "path": "{{ WS_PATH: string }}"
+        }
+      }
+    }
+  ],
+  "dns": {
+    "servers": ["8.8.8.8", "8.8.4.4", "localhost"]
+  }
+}
