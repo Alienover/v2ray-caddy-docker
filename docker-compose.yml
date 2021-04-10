@@ -8,7 +8,7 @@ services:
     network_mode: "host"
     command: v2ray -config=/etc/v2ray/config.json
     volumes:
-      - ./config.json:/etc/v2ray/config.json
+      - ./server_config.json:/etc/v2ray/config.json
     expose:
       - {{ PROXY_PORT: number }}
 
@@ -23,6 +23,3 @@ services:
     volumes:
       - ./index.html:/etc/index.html
       - ./Caddyfile:/etc/Caddyfile
-    ports:
-      - 443:443
-      - 80:80
