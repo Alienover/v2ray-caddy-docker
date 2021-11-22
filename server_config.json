@@ -3,24 +3,34 @@
     "loglevel": "warning",
     "access": ""
   },
-  "inbounds": [{
-    "port": "{{ PROXY_PORT: number }}",
-    "protocol": "vmess",
-    "settings": {
-      "clients": [{
-        "id": "{{ UUID: string }}",
-        "alterId": 64
-      }]
-    },
-    "streamSettings": {
-      "network": "ws",
-      "wsSettings": {
-        "path": "{{ WS_PATCH }}"
+  "inbounds": [
+    {
+      "port": "{{ PROXY_PORT: number }}",
+      "listen": "127.0.0.1",
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "{{ UUID: string }}",
+            "level": 0,
+            "email": "love@v2fly.org"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "decryption": "none",
+        "wsSettings": {
+          "path": "{{ WS_PATCH }}"
+        }
       }
     }
-  }],
-  "outbounds": [{
-    "protocol": "freedom",
-    "settings": {}
-  }]
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
 }

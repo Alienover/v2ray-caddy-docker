@@ -3,7 +3,7 @@ version: "3.7"
 services:
   v2ray:
     restart: always
-    image: v2ray/official
+    image: v2fly/v2fly-core
     container_name: v2ray
     network_mode: "host"
     command: v2ray -config=/etc/v2ray/config.json
