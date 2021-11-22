@@ -10,16 +10,25 @@
       "tag": "ws-tls-in",
       "sniffing": {
         "enabled": true,
-        "destOverride": ["http", "tls"]
+        "destOverride": [
+          "http",
+          "tls"
+        ]
       },
       "settings": {
         "auth": "noauth"
       }
+    },
+    {
+      "port": 1081,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "tag": "http-in"
     }
   ],
   "outbounds": [
     {
-      "protocol": "vmess",
+      "protocol": "vless",
       "tag": "ws-tls-out",
       "settings": {
         "vnext": [
@@ -29,7 +38,8 @@
             "users": [
               {
                 "id": "{{ UUID: string }}",
-                "alterId": 64
+                "level": 0,
+                "decrytion": "none"
               }
             ]
           }
@@ -45,6 +55,10 @@
     }
   ],
   "dns": {
-    "servers": ["8.8.8.8", "8.8.4.4", "localhost"]
+    "servers": [
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
+    ]
   }
 }
