@@ -39,7 +39,7 @@
               {
                 "id": "{{ UUID: string }}",
                 "level": 0,
-                "decrytion": "none"
+                "decryption": "none"
               }
             ]
           }
